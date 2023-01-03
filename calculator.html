@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #a{
+       margin-top: 15vh;
+        position: absolute;
+       
+            right: 5vw;
+
+           
+          
+            /* display:inline-flex;
+            float: right;
+             */
+            padding-right: 1vw;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-size:larger;
+            box-sizing: border-box;
+            
+        }
+        #main{
+            height: 49vh;
+            width: 62vw;
+            background-image: linear-gradient(red,orange);
+            margin-top: 10vh;
+            display: flex;
+            justify-content: center;
+
+        }
+        /* #m{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr
+        } */
+        #d{height: 9vh;
+            width: 59vw;
+            margin-bottom: 1vh;
+            padding-left: 1vw;
+            background-color: lavender;
+        }
+        input{
+            width: 14vw;
+            height: 8vh;
+            margin-top: 1vh;
+            background-color: rgb(227, 255, 227);
+
+        }
+    </style>
+</head>
+<body>
+    <center>
+<div id="main">
+    <form name ="f">
+      <input type="text" id="d" name="dis" placeholder="0">
+      <br>
+      <input type="button" value="1" onclick="d.value=1">
+      <input type="button" value="2" onclick="d.value+=2">
+      <input type="button" value="3" onclick="d.value+=3">
+      <input type="button" value="+" onclick="add('+')">
+      <br>
+      <input type="button" value="4" onclick="d.value+=4">
+      <input type="button" value="5" onclick="d.value+=5">
+      <input type="button" value="6" onclick="d.value+=6">
+      <input type="button" value="-" onclick="add('-')">
+      <br>
+      <input type="button" value="7" onclick="d.value+=7">
+      <input type="button" value="8" onclick="d.value+=8">
+      <input type="button" value="9" onclick="d.value+=9">
+      <input type="button" value="/" onclick="add('/')">
+      <br>
+      <input type="button" value="C" onclick="f.dis.value=''">
+      <input type="button" value="0" onclick="d.value+=0">
+      <input type="button" value="=" onclick="d.value=eval(f.dis.value)">
+      <input type="button" value="X" onclick="add('*')">
+
+
+
+
+
+    </form>
+</div></center>
+<H5 id="a">Made By Anmol </H5>
+
+<script>
+    function add(z){
+var a=0,b=0;
+a=f.d.value;
+b=a.charAt(a.length-1);
+// alert(b);
+if(b=='+'||b=='-'||b=='*'||b=='/')
+{
+    // f.d.value=a-b+'+';
+f.d.value=a.substring(0,a.length-1);
+f.d.value+=z;
+}
+else
+f.d.value+=z;
+}
+
+
+</script>
+
+</body>
+</html>
